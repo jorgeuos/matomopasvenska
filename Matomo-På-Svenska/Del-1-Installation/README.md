@@ -1,5 +1,7 @@
 # Matomo Installation
 
+![Matomo På Svenska - Del 1 - Installation](../../images/MPS-1-Installation.png)
+
 I den här handledningen så kommer jag beskriva dem stegen jag gör för att installera Matomo på en helt vanlig server.
 
 Vill man gå lite djupare och leverera en distribuerad Matomo lösning i molnet med Kubernetes så kan jag gå närmre in på det i en framtida vloggserie. Eller om man vill förstå bakomliggande mekanismer så tveka inte att höra av er.
@@ -85,7 +87,7 @@ Jag använder `utf8mb4` eftersom Matomo stödjer special tecken med 4 bytes kodn
 Det sparar er tid o möda att installera korrekt så här från början, för om man missar det så kommer man till en punkt när man inser att man behöver konvertera hela databasen(been there, done that😅) och beroende på hur mycket data man har så kan det ta väldigt lång tid, med massa moment som kan korrumpera din DB.
 
 ```sql
-CREATE DATABASE `matomopasvenska` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */
+CREATE DATABASE `matomopasvenska` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_sv_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */
 ```
 Ibland kan man få fel med sortering med svenska tecken. Jag har inga större bekymmer med det just nu. Men om man vill optimera sin Databas för svenska språket, så rekommenderar jag att man använder rätt `COLLATE`(kollationering). Annars kan vissa listor hamna i fel bokstavsordning med `ÅÄÖ` till exempel.
 För svenska använd:
@@ -108,12 +110,12 @@ CREATE USER 'matomo'@'matomopasvenska.demo' IDENTIFIED WITH authentication_plugi
 
 Eller om du får problem med `ERROR 1524 (HY000): Plugin 'authentication_plugin' is not loaded`, använd default lösenordshanteraren:
 ```sql
-CREATE USER 'matomo'@'matomopasvenska.demo' IDENTIFIED BY 'BytUtMot3ttSäkertLösenord!';
+CREATE USER 'matomo'@'127.0.0.1' IDENTIFIED BY 'BytUtMot3ttSäkertLösenord!';
 ```
 
 Tilldela behörigheter till Databasen:
 ```
-GRANT ALL PRIVILEGES ON matomopasvenska.* TO 'matomo'@'matomopasvenska.demo';
+GRANT ALL PRIVILEGES ON matomopasvenska.* TO 'matomo'@'127.0.0.1';
 FLUSH PRIVILEGES;
 exit
 ```

@@ -1,6 +1,8 @@
 # Matomo På Svenska
 
-Matomo  träning på svenska!
+![Matomo På Svenska - Intro](../../images/MPS-Intro.png)
+
+Matomo träning på svenska!
 
 Det finns ett stort utbud utav träningsvideor och material på engelska, franska och tyska. Men knappt någonting alls på svenska. Därför kommer här nu en serie vlogg-poster och instruktioner på svenska.
 
