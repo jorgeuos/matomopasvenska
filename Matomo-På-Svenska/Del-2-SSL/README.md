@@ -1,7 +1,7 @@
 # Fixa till SSL
 
 
-![Matomo På Svenska - Del 2 - SSL](../../images/MPS-1-SSL.png)
+![Matomo På Svenska - Del 2 - SSL](../../images/MPS-2-SSL.png)
 
 I första videon så nämnde jag att om man inte har SSL aktiverat för sin Matomo installation. Då kan scriptet bli blockat av webbläsaren för något som heter CSP, Content Security Policy
 

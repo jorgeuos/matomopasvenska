@@ -1,6 +1,6 @@
 # Matomo På Svenska
 
-![Matomo På Svenska - Intro](../../images/MPS-Intro.png)
+![Matomo På Svenska - Intro](./images/MPS-Intro.png)
 
 Matomo träning på svenska!
 
